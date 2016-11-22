@@ -1,5 +1,5 @@
 # Path to data
-.datapath <- file.path(path.package('swirl'), 'IPS_swirl',
+.datapath <- file.path(.get_course_path(),
                       'R_101 - R_Fundamentals', 'Looking_at_Data',
                       'plant-data.txt')
 # Read in data

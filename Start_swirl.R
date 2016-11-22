@@ -9,7 +9,7 @@ if(length(packages_to_install)) try(install.packages(packages_to_install),silent
 library(swirl)
 
 #' install all the IPS analyst courses  
-install_course_github("ImprovementPathSystems","IPS_swirl",multi = TRUE)
+install_course_github("ImprovementPathSystems","IPS_swirl_beta",multi = TRUE)
 
 #' start swirl
 swirl()
