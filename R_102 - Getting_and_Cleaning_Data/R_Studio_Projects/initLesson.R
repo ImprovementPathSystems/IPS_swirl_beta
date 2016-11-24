@@ -8,7 +8,7 @@
 
 # Put initialization code in this file.
 path_to_course <- file.path(.get_course_path(),
-	"R_102 - Getting_and_Cleaning_Data","Reading_and_Writing_Data")
+	"R_102 - Getting_and_Cleaning_Data","RStudio_Projects")
 
 
 path_to_lesson_data <- paste(path_to_course,'data',sep="/")
