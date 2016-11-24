@@ -1,0 +1,264 @@
+- Class: meta
+  Course: R_102 - Getting_and_Cleaning_Data
+  Lesson: Reading and Writing Data
+  Author: Michael Marks
+  Type: Standard
+  Organization: Improvement Path Systems
+  Version: 2.4.2
+
+- Class : text
+  Output: You should now have a good feel for how R deals with files in its working directories. This lesson will walk you through how to read different types of data into R, and then how to write them to disk. 
+  
+- Class : text
+  Output: As with the last lesson, I've created a variable for you called path_to_lesson_data.
+  
+- Class: cmd_question
+  Output: Confirm what is in the variable path_to_lesson_data
+  CorrectAnswer: "path_to_lesson_data"
+  AnswerTests: omnitest("path_to_lesson_data")
+  Hint: Just type "path_to_lesson_data" in the console.
+
+- Class: cmd_question
+  Output: set the working directory to path_to_lesson_data. setwd(path_to_lesson_data)
+  CorrectAnswer: "setwd(path_to_lesson_data)"
+  AnswerTests: omnitest("setwd(path_to_lesson_data)")
+  Hint: Just type "setwd(path_to_lesson_data)" in the console.  
+
+- Class: cmd_question
+  Output: Confirm what's in your working directory with list.files()
+  CorrectAnswer: "list.files()"
+  AnswerTests: omnitest("list.files()")
+  Hint: Just type "list.files()" into the console. 
+
+- Class: text
+  Output: You should see four different formats of the same data. urban.csv, urban.RData, urban.xlsx, and urban.txt
+  
+- Class: text
+  Output: This data contains information about the percent of each zip codes that is considered urban by the U.S. Census Bureau.
+  
+- Class: text
+  Output: Let's start with the urban.csv file. 
+  
+- Class: text
+  Output: a comma-separated values (CSV) file stores tabular data (numbers and text) in plain text. Each line of the file is a data record. Each record consists of one or more fields, separated by commas. The use of the comma as a field separator is the source of the name for this file format.
+  
+- Class: cmd_question
+  Output: Use the read.csv() command to read the urban.csv file into a variable called urban_csv
+  CorrectAnswer: urban_csv <- read.csv("urban.csv")
+  AnswerTests: omnitest("urban_csv <- read.csv(\"urban.csv\")")
+  Hint: Try urban_csv <- read.csv("urban.csv")
+  
+- Class: cmd_question
+  Output: Analyze the structure of urban_csv with the str() command
+  CorrectAnswer: str(urban_csv)
+  AnswerTests: omnitest("str(urban_csv)")
+  Hint: Try str(urban_csv) 
+
+- Class: text
+  Output: Notice the class of the County column. The default behavior of read.csv() is to convert strings to Factors. This is often desired for things like grouping or graphing, but sometimes you may want the data to be of the class "character"
+  
+- Class: text
+  Output: For example, if you look at what is in the County column, each record contains county and state. 
+  
+- Class: cmd_question
+  Output: take a look at the county column with the command urban_csv$County
+  CorrectAnswer: urban_csv$County
+  AnswerTests: omnitest("urban_csv$County")
+  Hint: Try urban_csv$County 
+  
+- Class: text
+  Output: If we wanted to split county and state into two columns, we'd need the data to be of class character instead of class Factor
+  
+- Class: text
+  Output: You could do this after loading the data with the command 'urban_csv$County <- as.character(urban_csv$County)'
+  
+- Class: text
+  Output: Fortunately you can control how read.csv() handles strings with the stringsAsFactors argument. 
+
+- Class: cmd_question
+  Output: Using the stringsAsFactors = FALSE argument this time, use the read.csv() command to read the urban.csv file into a variable called urban_csv_chr.
+  CorrectAnswer: urban_csv_chr <- read.csv("urban.csv", stringsAsFactors = FALSE) 
+  AnswerTests: omnitest("urban_csv_chr <- read.csv(\"urban.csv\", stringsAsFactors = FALSE)" )
+  Hint: Try urban_csv_chr <- read.csv("urban.csv", stringsAsFactors = FALSE)  
+
+- Class: cmd_question
+  Output: Analyze the structure of urban_csv_chr with the str() command
+  CorrectAnswer: str(urban_csv_chr)
+  AnswerTests: omnitest("str(urban_csv_chr)")
+  Hint: Try str(urban_csv_chr) 
+  
+- Class: text
+  Output: Notice that the County column is now of class character. This would enable us to split this column into a separate county and state column if we wanted. We won't do that in this lesson, but you'll explore that stuff later in the Dealing With Text class. 
+
+- Class: text
+  Output: Let's now explore how to import another type of data...Tab-Delimited text files. Tab-delimited text, also known as tab-separated values (TSV), is a format that can be created or viewed by most spreadsheet programs and text editors.
+  
+- Class: text
+  Output: The R function we'll use to do this is the read.table() function. The read.csv() function you already used is actually a subset of the read.table() function.
+  
+- Class: text
+  Output: You can actually use the read.table() function to import any delimited data structure, including .csv files. You just need to tell the read.table() function what delimiter to expect. This is done with the "sep" argument (short for seperator).
+
+- Class: text
+  Output: So the read.table() equivalent to read.csv(filename) is read.table(filename, sep=",")
+  
+- Class: text
+  Output: To let R know that the delimiter is a tab in our .txt file, the sep argument must be set to a tab. This isn't actually a literal tab, it's actually '\t'
+  
+- Class: text
+  Output: \t is what is known as an escape sequence. An escape sequence is a sequence of characters that does not represent itself when used inside a character or string literal, but is translated into another character or a sequence of characters that may be difficult or impossible to represent directly. 
+
+- Class: text
+  Output: You may have noticed another escape sequence in the ODBC lesson when you were building your query, the escape sequence for a single quote \' 
+  
+- Class: video
+  Output: There are many other escape sequences that you may come across as an analyst. Would you like to view them now?
+  VideoLink: https://en.wikipedia.org/wiki/Escape_sequences_in_C#Table_of_escape_sequences
+  
+- Class: cmd_question
+  Output: Okay. Now try importing the urban.txt file into a variable called urban_txt using the read.table() function. 
+  CorrectAnswer: urban_txt <- read.table("urban.txt", sep="\\t") 
+  AnswerTests: omnitest("urban_txt <- read.table(\"urban.txt\", sep=\"\\t\")" )
+  Hint: Try urban_txt <- read.table("urban.txt", sep="\t")     
+  
+- Class: cmd_question
+  Output: The first thing you do when you import a dataset it check its structure using str() to make sure it was imported correctly. Check the structure of urban_txt. 
+  CorrectAnswer: str(urban_txt)
+  AnswerTests: omnitest("str(urban_txt)" )
+  Hint: str(urban_txt)
+
+- Class: text
+  Output: Something looks off. It looks like there are no column names. Unfortunately, read.table does not import these automatically. You need to set the "header" argument = TRUE when you import. 
+
+- Class: cmd_question
+  Output: Try importing the urban.txt file the same way as last time, but with "header = TRUE" 
+  CorrectAnswer: urban_txt <- read.table("urban.txt", sep="\t", header=TRUE) 
+  AnswerTests: omnitest("urban_txt <- read.table(\"urban.txt\", sep=\"\\t\", header=TRUE)" )
+  Hint: Try urban_txt <- read.table("urban.txt", sep="\t", header=TRUE)     
+  
+- Class: cmd_question
+  Output: Check the structure of urban_txt again.
+  CorrectAnswer: str(urban_txt)
+  AnswerTests: omnitest("str(urban_txt)" )
+  Hint: str(urban_txt)
+
+- Class: text
+  Output: Everything looks good. Let's move on to importing Excel files using the readxl package. 
+
+- Class: cmd_question
+  Output: load the readxl package into your R environment using the library() function. 
+  CorrectAnswer: library(readxl)
+  AnswerTests: omnitest("library(readxl)" )
+  Hint: library(readxl)
+
+- Class: text
+  Output: The readxl package has only two functions excel_sheets() and read_excel(). 
+
+- Class: cmd_question
+  Output: excel_sheets() lists all the sheets in a given excel file. Give it a try with the urban.xlsx file. 
+  CorrectAnswer: excel_sheets("urban.xlsx")
+  AnswerTests: omnitest("excel_sheets(\"urban.xlsx\")" )
+  Hint: excel_sheets("urban.xlsx")
+
+- Class: text
+  Output: There are three sheets in this excel file, but it looks like our data is in the "urban" sheet. Let's load it into our R environment. 
+  
+- Class: cmd_question
+  Output: Load the "urban" sheet in urban.xlsx into a variable called urban_xlsx. Check the help files with ?read_excel to figure out how to use the 'sheet' argument.
+  CorrectAnswer: urban_xlsx <- read_excel("urban.xlsx",sheet = "urban")
+  AnswerTests: any_of_exprs('urban_xlsx <- read_excel(\"urban.xlsx\",sheet = 1)', 'urban_xlsx <- read_excel(\"urban.xlsx\",sheet = \"urban\")')
+  Hint: urban_xlsx <- read_excel("urban.xlsx",sheet = 1) or urban_xlsx <- read_excel("urban.xlsx",sheet = "urban")
+  
+- Class: cmd_question
+  Output: Check the structure of urban_xlsx to make sure everything is okay. 
+  CorrectAnswer: str(urban_xlsx)
+  AnswerTests: omnitest("str(urban_xlsx)" )
+  Hint: str(urban_xlsx)
+
+- Class: text
+  Output: Now on to our last data type, RData. RData files are native structures to R. You can save individual dataframes to them or your entire environment.  
+
+- Class: text
+  Output: RData files are nice because they maintain the exact data structures as when they were in the environment originally. You don't have to worry about things like maintaining classes of variables. You can pick up right where you left off. 
+
+- Class: text
+  Output: The only downside is that you need R to open them. 
+
+- Class: text
+  Output: You load an RData file with the load() function. 
+
+- Class: cmd_question
+  Output: Try loading the urban.RData file. Remember to use quotes. 
+  CorrectAnswer: load("urban.RData")
+  AnswerTests: omnitest("load(\"urban.RData\")" )
+  Hint: Try load("urban.RData")
+  
+- Class: text
+  Output: You should notice a new variable called "urban" in your global environment. You can check this with the ls() command or see it in the environment UI in the top-right of RStudio. 
+
+- Class: text
+  Output: We didn't have to assign the RData file to a variable when we loaded it because it is alrady a variable. 
+
+- Class: cmd_question
+  Output: check out the structure of the urban variable
+  CorrectAnswer: str(urban)
+  AnswerTests: omnitest("str(urban)")
+  Hint: str(urban)
+
+- Class: text
+  Output: Okay. You're almost done!
+
+- Class: text
+  Output: We've explored how to import the four most common file types. Let's try saving some data.
+
+- Class: text
+  Output: If you want to share your data with others who may not be using R, a simple solution is to write a .csv file, since these can be opened in programs like Excel. 
+
+- Class: text
+  Output: You can do this with the write.csv() function. write.csv() takes two arguments, the variable containing the data to save, and a filename you'd like to use, i.e. write.csv(variable,"filename.csv"). 
+  
+- Class: cmd_question
+  Output: Write the urban_xlsx variable to a .csv called "my_saved_data.csv"
+  CorrectAnswer: write.csv(urban_xlsx,"my_saved_data.csv")
+  AnswerTests: any_of_exprs("write.csv(urban_xlsx,\"my_saved_data.csv\")", "write.csv(urban_xlsx,file=\"my_saved_data.csv\")")
+  Hint: write.csv(urban_xlsx,"my_saved_data.csv")
+
+- Class: text
+  Output: Note that row names and column names are written by default, but this can be controlled with the row.names and col.names arguments. 
+
+- Class: cmd_question
+  Output: Check to see if the file was written to our working directory with the list.files() command. 
+  CorrectAnswer: list.files()
+  AnswerTests: omnitest("list.files()")
+  Hint: list.files()  
+
+- Class: text
+  Output: Now let's actually save our entire R environment to an RData file. RStudio will prompt you to do this when you close, but let's explore how to do it manually.  
+  
+- Class: cmd_question
+  Output: type "save.image("Our_Environment.RData")" to save the entire R environment to an RData file. 
+  CorrectAnswer: save.image("Our_Environment.RData")
+  AnswerTests: omnitest("save.image(\"Our_Environment.RData\")" )
+  Hint: save.image("Our_Environment.RData")   
+  
+- Class: cmd_question
+  Output: Check to see if the RData file was written to our working directory with the list.files() command. 
+  CorrectAnswer: list.files()
+  AnswerTests: omnitest("list.files()")
+  Hint: list.files()  
+
+- Class: cmd_question
+  Output: Our environment is saved, so we can safely delete everything using the command "rm(list=ls())". Go for it!
+  CorrectAnswer: rm(list=ls())
+  AnswerTests: omnitest("rm(list=ls())")
+  Hint: rm(list=ls()) 
+ 
+- Class: cmd_question
+  Output: Fear not! We can get everything back by loading "Our_Environment.RData" with load("Our_Environment.RData")
+  CorrectAnswer: load("Our_Environment.RData")
+  AnswerTests: omnitest("load(\"Our_Environment.RData\")")
+  Hint: load("Our_Environment.RData")
+  
+  
+- Class: text
+  Output: You've completed this lesson on reading and writing data in R. Nice work! 

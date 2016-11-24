@@ -1,7 +1,10 @@
 Workspace_and_Files
-Reading_Tabular_Data
-Data_Manipulation
+RStudio_Projects
+Reading_and_Writing_Data
+ODBC
 Manipulating_Data_with_dplyr
 Grouping_and_Chaining_with_dplyr
 Tidying_Data_with_tidyr
 Dates_and_Times_with_lubridate
+Data_Manipulation
+

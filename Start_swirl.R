@@ -13,3 +13,5 @@ install_course_github("ImprovementPathSystems","IPS_swirl_beta",multi = TRUE)
 
 #' start swirl
 swirl()
+
+

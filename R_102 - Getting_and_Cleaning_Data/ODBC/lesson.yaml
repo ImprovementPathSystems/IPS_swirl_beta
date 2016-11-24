@@ -1,0 +1,46 @@
+- Class: meta
+  Course: R_102 - Getting_and_Cleaning_Data
+  Lesson: ODBC
+  Author: Michael Marks
+  Type: Standard
+  Organization: Improvement Path Systems
+  Version: 2.4.2
+
+- Class : text
+  Output: This lesson will walk you through how to set up an open database connection (ODBC) to SQL Server. 
+
+- Class : text
+  Output: If you're unfamiliar with the SQL languange or you'd like to sharpen your skills, we recommend Microsoft's online course on Querying With Transact SQL.
+ 
+- Class: video
+  Output: Do you want to open the course on Querying With Transact SQL?
+  VideoLink: https://mva.microsoft.com/en-US/training-courses/querying-with-transactsql-10530?l=810ULg87_9104984382
+  
+- Class : text
+  Output: An ODBC connection between R and SQL Server allows for seamless integration between the two programs. By the end of this lesson, you'll be writing SQL queries in R that pull data directly from SQL Server. 
+
+- Class : text
+  Output: First we need to set up an ODBC connection. Press enter to open a PDF that will walk you through how to do this. 
+  
+- Class: figure
+  Output: See PDF window that just opened. 
+  Figure: ODBC_Setup.R
+  FigureType: new
+  
+- Class: cmd_question
+  Output: Now that you've got your ODBC connection set up, install the RODBC package with the install.packages() command. 
+  CorrectAnswer: install.packages("RODBC")
+  AnswerTests: omnitest(install.packages("RODBC"))
+  Hint: The package name needs to be in quotes for this function. install.packages("RODBC")
+
+- Class : text
+  Output: Okay. We now have everything we need to connect R to SQL Server via ODBC.
+
+- Class : text
+  Output: I'm now going to open an R script containing a template to pull data from SQL Server. Once you've successfully pulled data, you can move on to the next lesson. Make sure to save this script for future use in a convenient location on your hard drive. PRESS ENTER TO OPEN ODBC TEMPLATE. 
+  
+- Class: figure
+  Output: See R file that just opened. 
+  Figure: Load_ODBC_Template.R
+  FigureType: new
+  

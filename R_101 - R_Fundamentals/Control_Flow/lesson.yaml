@@ -1,0 +1,31 @@
+- Class: meta
+  Course: R 101 - R Fundamentals
+  Lesson: Control Flow
+  Author: Michael Marks
+  Type: Standard
+  Organization: Improvement Path Systems
+  Version: 2.4.2
+
+- Class: text
+  Output: In this lesson we will explore how to control the flow of your R code's execution with things like if statements and loops
+
+- Class: text
+  Output: First let's look at what an if statement looks like in R
+  
+- Class: text
+  Output: "if (condition) {
+    # do something
+  } else {
+    # do s  }"omething else
+
+
+- Class: exact_question
+  Output: In the follow statement, if x = 10, what will y equal after the code executes? 
+  if (x<7) {
+    y=1
+  }else{
+    y=0
+  }
+  CorrectAnswer: 0
+  AnswerTests: omnitest(correctVal=0)
+  Hint: Try again. 

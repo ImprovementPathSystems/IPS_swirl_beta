@@ -10,6 +10,9 @@
   Output: In this lesson, you'll learn how to use lapply() and sapply(), the two most important members of R's *apply family of functions, also known as loop functions.
 
 - Class: text
+  Output: These functions enable you to do almost anything you could do with a loop, but in a more consisely written way. They are also aften faster than loops and can be scaled up to larger datasets by parallelizing them. 
+  
+- Class: text
   Output: These powerful functions, along with their close relatives (vapply() and tapply(), among others) offer a concise and convenient means of implementing the Split-Apply-Combine strategy for data analysis.
 
 - Class: text

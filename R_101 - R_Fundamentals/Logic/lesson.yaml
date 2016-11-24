@@ -342,7 +342,22 @@
   AnswerChoices: "any(ints == 10); all(ints == 10); all(c(TRUE, FALSE, TRUE)); any(ints == 2.5)"
   AnswerTests: omnitest(correctVal='any(ints == 10)')
   Hint: "any() will evaluate to TRUE if there is one or more TRUE elements in a logical vector."
+
+- Class : text
+  Output: Let's now look at a basic control structure, the ifelse() statement. ifelse() takes a logical expression and will do one of two things based on whether that expression is true or false
   
+- Class : cmd_question
+  Output: Set a variable z to an ifelse() statement that evaluates the logical expression any(ints == 10) and returns 100 if TRUE and 50 if FALSE. Remember to use ?ifelse to look up the function's documentation. 
+  CorrectAnswer: "z <- ifelse(any(ints == 10), 100, 50)"
+  AnswerTests: omnitest(correctExpr='z <- ifelse(any(ints == 10), 100, 50)')
+  Hint: z <- ifelse(any(ints == 10), yes, no)   Remember to use ?ifelse to look up the function's documentation. 
+  
+- Class : cmd_question
+  Output: Since we know that any(ints == 10) evaluates to TRUE, z should equal 100. Print z to the console to confirm. 
+  CorrectAnswer: "z"
+  AnswerTests: any_of_exprs('z', 'print(z)')
+  Hint: Just type z 
+
 - Class : text
   Output: "That's all for this introduction to logic in R. If you really want to see
     what you can do with logic, check out the control flow lesson!"
