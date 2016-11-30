@@ -1,14 +1,23 @@
 - Class: meta
   Course: R 101 - R Fundamentals
   Lesson: Basic Building Blocks
-  Author: Nick Carchedi
+  Author: Nick Carchedi, adapted by Michael Marks
   Type: Standard
-  Organization: JHU Biostat
+  Organization: JHU Biostat, adapted by Improvement Path Systems 
   Version: 2.2.0
 
 - Class: text
   Output: In this lesson, we will explore some basic building blocks of the R programming
     language.
+    
+- Class: text
+  Output: Because these are fundamentals, it may be difficult to see the real world applications of the topics covered in this lesson and the other lessons in the R 101 course. 
+
+- Class: text
+  Output: But, as Josh Waitzkin says in his book THE ART OF LEARNING, "It is most effective to launch into the learning process by studying a discipline’s most fundamental principles. A devotion to mastering the nuances of these basics builds the foundation required for more complex understanding; creative bursts of inspiration; and higher levels of achievement, which result from an interplay between knowledge, intuition, and creativity."    
+    
+- Class: text
+  Output: So let's dive in and begin mastering the nuances of the R Programming language. 
 
 - Class: text
   Output: If at any point you'd like more information on a particular topic related
