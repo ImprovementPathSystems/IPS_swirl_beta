@@ -1,9 +1,9 @@
 - Class: meta
   Course: R 101 - R Fundamentals
   Lesson: Matrices and Data Frames
-  Author: Nick Carchedi
+  Author: Nick Carchedi, adapted by Michael Marks
   Type: Standard
-  Organization: JHU Biostat
+  Organization: JHU Biostat, adapted by Improvement Path Systems
   Version: 2.2.0
 
 - Class: text
@@ -139,7 +139,7 @@
   Hint: Type my_data to view its contents.
 
 - Class: text
-  Output: It looks like the data.frame() function allowed us to store our character vector of names right alongside our matrix of numbers. That's exactly what we were hoping for! 
+  Output: It looks like the data.frame() function allowed us to store our character vector of names right alongside our matrix of numbers. That's exactly what we were hoping for!
 
 - Class: text
   Output: Behind the scenes, the data.frame() function takes any number of arguments and returns a single object of class `data.frame` that is composed of the original objects.
@@ -175,11 +175,30 @@
   Hint: Print the contents of my_data to the console.
 
 - Class: text
+  Output: One last thing before we go. Let's briefly go over a couple ways to subset this dataframe.
+  
+- Class: text
+  Output: At it's core, a dataframe in R is simply a list of vectors. To access a single element of an R list object, you use a dollar sign ($).
+
+- Class: text
+  Output: So, since my_data is a list of six vectors named "patient", "age", "weight", "bp", "rating" and "test", you can access a single column like this, my_data$colname 
+
+- Class: cmd_question
+  Output: Try using this structure to return the patient column of my_data. Don't bother storing it in a variable. 
+  CorrectAnswer: my_data$patient
+  AnswerTests: omnitest(correctExpr='my_data$patient')
+  Hint: Try my_data$patient
+
+- Class: text
+  Output: Since my_data$patient is a vector, you can subset it in the same ways as the last lesson (i.e my_data$patient[1], my_data$patient[1:3], my_data$patient[my_data$patient =="Bill"], etc.).
+
+- Class: cmd_question
+  Output: Try using this structure to return the first two rows of my_data$patient
+  CorrectAnswer: my_data$patient[1:2]
+  AnswerTests: omnitest(correctExpr='my_data$patient[1:2]')
+  Hint: Try my_data$patient[1:2]  
+  
+- Class: text
   Output: In this lesson, you learned the basics of working with two very important and common data structures -- matrices and data frames. There's much more to learn and we'll be covering more advanced topics, particularly with respect to data frames, in future lessons.
 
-- Class: mult_question
-  Output: Would you like to inform someone about your successful completion of this lesson?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
+
