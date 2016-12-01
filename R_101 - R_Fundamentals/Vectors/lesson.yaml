@@ -1,9 +1,9 @@
 - Class: meta
   Course: R 101 - R Fundamentals
   Lesson: Vectors
-  Author: Nick Carchedi
+  Author: Nick Carchedi, adapted by Michael Marks
   Type: Standard
-  Organization: JHU Biostat
+  Organization: JHU Biostat, adapted by Improvement Path Systems
   Version: 2.2.0
 
 - Class: text
@@ -253,13 +253,7 @@
     vector by the paste() function.
 
 - Class: text
-  Output: We'll discuss coercion in another lesson, but all it really means that the
+  Output: We'll discuss coercion in another lesson, but all it really means is that the
     numbers 1, 2, 3, and 4 in the output above are no longer numbers to R, but rather
     characters "1", "2", "3", and "4".
 
-- Class: mult_question
-  Output: Would you like to inform someone about your successful completion of this lesson?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
