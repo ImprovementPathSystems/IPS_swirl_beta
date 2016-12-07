@@ -1,14 +1,43 @@
 - Class: meta
   Course: R_102 - Getting_and_Cleaning_Data
-  Lesson: RStudio Projects
+  Lesson: RStudio
   Author: Michael Marks
   Type: Standard
   Organization: Improvement Path Systems
   Version: 2.4.2
 
 - Class : text
-  Output: Dealing with changing working directories can be a pain, especially when working with others. Luckily RStudio projects make that pain go away. Let's explore. 
+  Output: In this lesson we will be exploring R's most popular interactive development environment, RStudio. 
 
+- Class : text
+  Output: You have probably been using RStudio up to this point, but swirl never really escapes the console window. 
+  
+- Class : text
+  Output: So to explore RStudio, we'll use videos. Press ENTER to get started.  
+  
+- Class: figure
+  Output: Please watch the video that just opened.  
+  Figure: Launch_RStudio_Intro_Video.R
+  FigureType: new
+
+- Class : text
+  Output: Now let's explore a great new feature of RStudio, R Notebooks. They make sharing and documenting your work really easy. I've got a link to the R Notebook website and a couple videos to get you started. 
+
+- Class: video
+  Output: Do you want to open Part 1 of the R Notebook video tutorial?
+  VideoLink: https://www.youtube.com/watch?v=TJmNvfhLCoI
+  
+- Class: video
+  Output: Do you want to open Part 2 of the R Notebook video tutorial?
+  VideoLink: https://www.youtube.com/watch?v=CvFu_8_PA5Y&t=208s
+
+- Class: video
+  Output: Do you want to open the R Notebook Website? You know you want to...
+  VideoLink: http://rmarkdown.rstudio.com/r_notebooks.html
+
+- Class : text
+  Output: Now let's move to R Projects. 
+  
 - Class : text
   Output: I've created a variable for you called path_to_lesson_data. You can probably guess what it contains. 
   
@@ -28,7 +57,7 @@
   Output: This can be a very difficult task if you have a lot of source files. Thankfully, RStudio Projects make R scripts agnostic to where it's located. 
   
 - Class : text
-  Output: Unfortunately, swirl doesn't provide a good way to demostrate RStudio Project functionality. Here are a couple good resources though. 
+  Output: Unfortunately, swirl doesn't provide a good way to demonstrate RStudio Project functionality. Here are a couple good resources though. 
 
 - Class: video
   Output: Do you want to open a basic tutorial on RStudio Projects?
@@ -37,4 +66,3 @@
 - Class: video
   Output: Do you want to open a video on RStudio Projects and Working Directories?
   VideoLink: https://www.youtube.com/watch?v=x_QnNhQ3jfY&t=4s    
-
