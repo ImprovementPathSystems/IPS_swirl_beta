@@ -1,3 +1,9 @@
+.get_course_path <- function(){
+  tryCatch(swirl:::swirl_courses_dir(),
+           error = function(c) {file.path(find.package("swirl"),"Courses")}
+  )
+}
+
 # Path to data
 .datapath <- file.path(.get_course_path(),
                       'R_101 - R_Fundamentals', 'Looking_at_Data',
