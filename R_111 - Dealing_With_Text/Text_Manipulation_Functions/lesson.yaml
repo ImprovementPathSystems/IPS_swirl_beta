@@ -129,11 +129,4 @@
   Output: In this lesson we only covered the basics of manipulating strings in
     R, the real fun material is in the regular expressions lesson!
 
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No;Generate Code
-  AnswerTests: coursera_on_demand()
-  Hint: ""
 

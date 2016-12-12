@@ -1,9 +1,9 @@
 - Class: meta
   Course: The R Programming Environment
   Lesson: The stringr Package
-  Author: Sean Kross
+  Author: Sean Kross, adapted by Michael Marks
   Type: Standard
-  Organization: The Johns Hopkins Data Science Lab
+  Organization: The Johns Hopkins Data Science Lab, adapted by Improvement Path Systems
   Version: 2.4.2
 
 - Class: text
@@ -100,7 +100,7 @@
 
 - Class: cmd_question
   Output: The str_extract() function returns the sub-string of a string that 
-    matches the providied regular expression. Enter str_extract("Camaro Z28", "[0-9]+")
+    matches the provided regular expression. Enter str_extract("Camaro Z28", "[0-9]+")
     into the R console to give this function a spin.
   CorrectAnswer: str_extract("Camaro Z28", "[0-9]+")
   AnswerTests: omnitest(correctExpr='str_extract("Camaro Z28", "[0-9]+")')
@@ -148,11 +148,3 @@
 
 - Class: text
   Output: That's the end of our tour of stringr!
-  
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No;Generate Code
-  AnswerTests: coursera_on_demand()
-  Hint: ""

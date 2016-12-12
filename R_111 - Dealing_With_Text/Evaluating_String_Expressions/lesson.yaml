@@ -1,0 +1,94 @@
+- Class: meta
+  Course: R 111 - Dealing with Text
+  Lesson: Evaluating String Expressions
+  Author: Michael Marks
+  Type: Standard
+  Organization: Improvement Path Systems
+  Version: 2.4.2
+
+- Class: text
+  Output: Now that you've got a handle on the basic text manipulation functions, we'll use that knowledge to build string expressions and evaluate them. This will enable you to create powerfully dynamic code.
+
+
+- Class: text
+  Output: To do this we'll use a combination of two functions, eval() and parse().
+
+- Class: cmd_question
+  Output: eval() evaluates an R expression. An expression is created with the expression function, expression(). Try typing eval(expression(5+5))
+  CorrectAnswer: eval(expression(5+5))
+  AnswerTests: omnitest(correctExpr='eval(expression(5+5))')
+  Hint: Just type eval(expression(5+5))
+
+
+- Class: text
+  Output: The great thing is that we can create expression() functions from text strings by using the parse() function.
+
+- Class: cmd_question
+  Output: Try typing parse(text = "5+5")
+  CorrectAnswer: parse(text = "5+5")
+  AnswerTests: omnitest(correctExpr='parse(text = "5+5")')
+  Hint: Just type parse(text = "5+5")
+
+- Class: text
+  Output: Notice the expression function that is returned. Let's try actually evaluating the "5+5" string expression now by combining it with eval().
+
+- Class: cmd_question
+  Output: Try typing eval(parse(text = "5+5"))
+  CorrectAnswer: eval(parse(text = "5+5"))
+  AnswerTests: omnitest(correctExpr='eval(parse(text = "5+5"))')
+  Hint: Just type eval(parse(text = "5+5"))
+
+- Class: text
+  Output: Alright, you've got the basic functionality down. Let's dive into some more powerful stuff.
+
+- Class: cmd_question
+  Output: Let's create a dynamic variable via a text string. Try typing eval(parse(text = "x <- 5+5"))
+  CorrectAnswer: eval(parse(text = "x <- 5+5"))
+  AnswerTests: omnitest(correctExpr='eval(parse(text = "x <- 5+5"))')
+  Hint: Just type eval(parse(text = "x <- 5+5"))
+
+- Class: cmd_question
+  Output: Okay, now see what x looks like. Type x.
+  CorrectAnswer: x
+  AnswerTests: omnitest(correctExpr='x')
+  Hint: Just type x
+
+- Class: cmd_question
+  Output: The string expression "x <- 5+5" is evaluated just as if you typed it in the console. Let's now use this same technique to dynamically create some variables from strings. Type var_names <- c("var1","var2","var3")
+  CorrectAnswer: var_names <- c("var1","var2","var3")
+  AnswerTests: omnitest(correctExpr='var_names <- c("var1","var2","var3")')
+  Hint: Just type var_names <- c("var1","var2","var3")
+
+- Class: cmd_question
+  Output: Now type eval_strings <- c("5+10","5+15","5+20")
+  CorrectAnswer: eval_strings <- c("5+10","5+15","5+20")
+  AnswerTests: omnitest(correctExpr='eval_strings <- c("5+10","5+15","5+20")')
+  Hint: Just type eval_strings <- c("5+10","5+15","5+20")
+
+- Class: text
+  Output: Okay, you're almosts done. Now, let's pull it all together and evaluate these together by combining the eval(), parse() and paste() functions.
+
+- Class: cmd_question
+  Output: Type eval(parse(text = paste(var_names,"<-",eval_strings)))
+  CorrectAnswer: eval(parse(text = paste(var_names,"<-",eval_strings)))
+  AnswerTests: omnitest(correctExpr='eval(parse(text = paste(var_names,"<-",eval_strings)))')
+  Hint: Just type eval(parse(text = paste(var_names,"<-",eval_strings)))
+
+- Class: mult_question
+  Output: What do you think will be returned if we type var2 in the console.
+  AnswerChoices: NA;15;20;25
+  CorrectAnswer: 20
+  AnswerTests: omnitest(correctVal= '20')
+  Hint: Think about the expression returned by paste(var_names[2],"<-",eval_strings[2])
+
+- Class: text
+  Output: By using eval(parse(text = paste(var_names,"<-",eval_strings))), we've just evaluated three separate text string expressions, "var1 <- 5+5", "var2 <- 5+10" and "var3 <- 5+15"
+
+- Class: cmd_question
+  Output: Now look at our three variables we just created. Type c(var1,var2,var3)
+  CorrectAnswer: c(var1,var2,var3)
+  AnswerTests: omnitest(correctExpr='c(var1,var2,var3)')
+  Hint: Just type c(var1,var2,var3)
+
+- Class: text
+  Output: In this lesson, you've learned how to create and evaluate basic text string expressions. This is a great way to make powerfully dynamic code.

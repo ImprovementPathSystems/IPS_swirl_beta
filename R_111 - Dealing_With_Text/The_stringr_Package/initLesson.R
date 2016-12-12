@@ -12,7 +12,7 @@
 
 .pathtofile <<- function(fileName){
   file.path(.get_course_path(),
-                      "The_R_Programming_Environment", "Regular_Expressions",
+                      "R_111 - Dealing_With_Text", "Regular_Expressions",
                       fileName)
 }
 
