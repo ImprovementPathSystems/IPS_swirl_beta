@@ -255,5 +255,37 @@
   Hint: Follow the directions in the script comments very carefully. If R gave you an error above, try to understand what it is telling you. If you get stuck, type reset() to start with a fresh script, then save the script and type submit() when you are ready.
   Script: chain4.R
 
+- Class: mult_question
+  Output: Okay. Let's Review. Which dplyr function enables you to extract rows that meet logical criteria?
+  CorrectAnswer: filter()
+  AnswerChoices: filter();arrange();select();mutate();summarise()
+  AnswerTests: omnitest(correctVal='filter()')
+  Hint: 'Try again'
+  
+- Class: mult_question
+  Output: Which dplyr function enables you to compute and append one or more new columns?
+  CorrectAnswer: mutate()
+  AnswerChoices: filter();arrange();select();mutate();summarise()
+  AnswerTests: omnitest(correctVal='mutate()')
+  Hint: 'Try again'
+
+- Class: mult_question
+  Output: Which dplyr function enables you to select columns by name or helper functions like contains(), starts_with() or ends_with?
+  CorrectAnswer: select()
+  AnswerChoices: filter();arrange();select();mutate();summarise()
+  AnswerTests: omnitest(correctVal='select()')
+  Hint: 'Try again'
+
+- Class: mult_question
+  Output: Which dplyr function enables you to order rows by values of a column?
+  CorrectAnswer: arrange()
+  AnswerChoices: filter();arrange();select();mutate();summarise()
+  AnswerTests: omnitest(correctVal='arrange()')
+  Hint: 'Try again'
+
+- Class: video
+  Output: Before we end, I'd like to open the dplyr cheatsheet for you. This is a great reference to review what you just learned and to see all the additional functionality dplyr has to offer. 
+  VideoLink: https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf
+
 - Class: text
   Output: In this lesson, you learned about grouping and chaining using dplyr. You combined some of the things you learned in the previous lesson with these more advanced ideas to produce concise, readable, and highly effective code. Welcome to the wonderful world of dplyr!
