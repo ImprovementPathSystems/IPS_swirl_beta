@@ -1,9 +1,9 @@
 - Class: meta
   Course: R 102 - Getting and Cleaning_Data
   Lesson: Manipulating Data with dplyr
-  Author: Michael Marks (adapted from Nick Carchedi)
+  Author: Nick Carchedi, adapted by Michael Marks
   Type: Standard
-  Organization: Improvement Path Systems (adapted from JHU Biostat)
+  Organization: JHU Biostat, adapted by Improvement Path Systems
   Version: 2.2.12
 
 - Class: text
@@ -27,8 +27,8 @@
 - Class: cmd_question
   Output: Now use str() to preview the data.
   CorrectAnswer: str(mydf)
-  AnswerTests: omnitest(correctExpr='head(mydf)')
-  Hint: str(mydf) will show you the first six rows of mydf.
+  AnswerTests: omnitest(correctExpr='str(mydf)')
+  Hint: str(mydf) will show the classes of all the columns and the first few entries.
 
 - Class: text
   Output: Notice how there are no columns of class factor. If we hadn't used stringsAsFactors = FALSE, any character column you see would be of class factor
