@@ -1,5 +1,5 @@
-# After the previous question, you should have transformed the `titanic`
-# data to look like this:
+# I've gone ahead and created a category field for you using the cut function. 
+# The data should now look like this:
 #
 ##   Survived Pclass   Age     Sex      agecat
 ##          0      3    22    male    15 to 50

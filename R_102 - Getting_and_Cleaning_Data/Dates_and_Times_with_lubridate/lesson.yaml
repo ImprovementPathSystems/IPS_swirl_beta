@@ -1,22 +1,22 @@
 - Class: meta
   Course: R 102 - Getting and Cleaning_Data
   Lesson: Dates and Times with lubridate
-  Author: Nick Carchedi
+  Author: Nick Carchedi, adapted by Michael Marks
   Type: Standard
-  Organization: JHU Biostat
+  Organization: JHU Biostat, adapted by Improvement Path Systems
   Version: 2.2.13
 
 - Class: text
   Output: In this lesson, we'll explore the lubridate R package, by Garrett Grolemund and Hadley Wickham. According to the package authors, "lubridate has a consistent, memorable syntax, that makes working with dates fun instead of frustrating." If you've ever worked with dates in R, that statement probably has your attention.
 
 - Class: cmd_question
-  Output: Unfortunately, due to different date and time representations, this lesson is only guaranteed to work with an "en_US.UTF-8" locale. To view your locale, type Sys.getlocale("LC_TIME").
+  Output: Unfortunately, due to different date and time representations, this lesson is only guaranteed to work with an "English_United States.1252" locale. To view your locale, type Sys.getlocale("LC_TIME").
   CorrectAnswer: Sys.getlocale("LC_TIME")
   AnswerTests: start_timer(); omnitest(correctExpr='Sys.getlocale("LC_TIME")')
   Hint: Type Sys.getlocale("LC_TIME") to view your time locale.
 
 - Class: text
-  Output: If the output above is not "en_US.UTF-8", this lesson is not guaranteed to work correctly. Of course, you are welcome to try it anyway. We apologize for this inconvenience.
+  Output: If the output above is not "English_United States.1252", this lesson is not guaranteed to work correctly. Of course, you are welcome to try it anyway. We apologize for this inconvenience.
 
 - Class: cmd_question
   Output: lubridate was automatically installed (if necessary) and loaded upon starting this lesson. To build the habit, we'll go ahead and (re)load the package now. Type library(lubridate) to do so.
@@ -100,13 +100,13 @@
   Hint: Type my_date to view its contents.
 
 - Class: cmd_question
-  Output: It looks almost the same, except for the addition of a time zone, which we'll discuss later in the lesson. Below the surface, there's another important change that takes place when lubridate parses a date. Type class(my_date) to see what that is.
+  Output: It looks exactly the same. However, below the surface there's an important change that takes place when lubridate parses a date. Type class(my_date) to see what that is.
   CorrectAnswer: class(my_date)
   AnswerTests: omnitest('class(my_date)')
   Hint: Type class(my_date) to see what important change takes place when lubridate parses a date.
 
 - Class: text
-  Output: So ymd() took a character string as input and returned an object of class POSIXct. It's not necessary that you understand what POSIXct is, but just know that it is one way that R stores date-time information internally.
+  Output: So ymd() took a character string as input and returned an object of class Date. 
 
 - Class: cmd_question
   Output: '"1989-05-17" is a fairly standard format, but lubridate is ''smart'' enough to figure out many different date-time formats. Use ymd() to parse "1989 May 17". Don''t forget to put quotes around the date!'

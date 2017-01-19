@@ -1,7 +1,8 @@
 # This script builds on the previous one by appending
 # a call to spread(), which will allow us to turn the
 # values of the test column, midterm and final, into
-# column headers (i.e. variables).
+# column headers (i.e. variables). In the end we want
+# two separate columns for the final and midterm grades. 
 #
 # You only need to specify two arguments to spread().
 # Can you figure out what they are? (Hint: You don't

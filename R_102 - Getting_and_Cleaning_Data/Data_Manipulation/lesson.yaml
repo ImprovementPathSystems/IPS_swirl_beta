@@ -13,7 +13,7 @@
     Your goal is to re-create the example output shown in the 
     comments of the script. When you are ready to submit your script,
     save the script and type `submit()`, or type `reset()` to reset 
-    the script to its original state.
+    the script to its original state. Don't forget about the Data Manipulation with dplyr and tidyr cheatsheet in the help menu!
   AnswerTests: script_results_identical('wc_1')
   Hint: Check the example output in the comments of the script I 
     opened for you. Make sure you are selecting just the four 
@@ -33,7 +33,7 @@
     Your goal is to re-create the example output shown in the 
     comments of the script. When you are ready to submit your script,
     save the script and type `submit()`, or type `reset()` to reset 
-    the script to its original state.
+    the script to its original state. Don't forget about the Data Manipulation with dplyr and tidyr cheatsheet in the help menu!
   AnswerTests: script_results_identical('wc_2')
   Hint: Check the example output in the comments of the script I 
     opened for you. Make sure you are summarizing all four 
@@ -54,7 +54,7 @@
     to the pipe chain in the script. Your goal is to re-create the 
     example output shown in the comments of the script. When you are 
     ready to submit your script, save the script and type `submit()`,
-    or type `reset()` to reset the script to its original state.
+    or type `reset()` to reset the script to its original state. Don't forget about the Data Manipulation with dplyr and tidyr cheatsheet in the help menu!
   AnswerTests: script_results_identical('wc_3')
   Hint: Check the example output in the comments of the script I 
     opened for you. Make sure you are rearranging the data frame so 
@@ -73,7 +73,7 @@
     to the pipe chain in the script. Your goal is to re-create the 
     example output shown in the comments of the script. When you are 
     ready to submit your script, save the script and type `submit()`,
-    or type `reset()` to reset the script to its original state.
+    or type `reset()` to reset the script to its original state. Don't forget about the Data Manipulation with dplyr and tidyr cheatsheet in the help menu!
   AnswerTests: script_results_identical('wc_4')
   Hint: Check the example output in the comments of the script I 
     opened for you. You may find the `round` function useful. 
@@ -110,7 +110,7 @@
     Your goal is to re-create the example output shown in the 
     comments of the script. When you are ready to submit your script,
     save the script and type `submit()`, or type `reset()` to reset 
-    the script to its original state.
+    the script to its original state. Don't forget about the Data Manipulation with dplyr and tidyr cheatsheet in the help menu!
   AnswerTests: script_results_identical('titanic_2')
   Hint: Check the example output in the comments of the script I 
     opened for you. Make sure you are filtering down to just those 
@@ -120,31 +120,10 @@
     frame before you submit it.
   Script: step_2_titanic.R
 
-- Class: script
-  Output: In this question, you will again continue to build on the 
-    data cleaning you started in the last two questions. I opened a
-    new R script for you with the previous steps completed. As a next 
-    step, you now need to create a new column called agecat that
-    divides a person's age into three broad categories (Under 15,
-    15 to 50, Over 50). To do this, add a function from `dplyr` or 
-    `tidyr` to the pipe chain in the script. Your goal is to 
-    re-create the example output shown in the comments of the script.
-    When you are ready to submit your script, save the script and 
-    type `submit()`, or type `reset()` to reset the script to its 
-    original state.
-  AnswerTests: script_results_identical('titanic_3')
-  Hint: Check the example output in the comments of the script I 
-    opened for you. The `cut` function is useful for this question--
-    be sure to check its help file. Make sure you understand how 
-    `cut` handles ages right at the cutpoints (e.g., 15 and 50). 
-    Try running your code in the console and printing out the result
-    to determine whether it's successfully generating the desired 
-    final data frame before you submit it.
-  Script: step_3_titanic.R
-  
+
 - Class: script
   Output: In this question, you will continue to build on the 
-    data cleaning you from the last three questions. I opened a
+    data cleaning you from the last two questions. To save you some effort, I've added a new categorical column using the cut function.  I opened a
     new R script for you with the previous steps completed. As a next 
     step, you now need to generate a data frame with the number of
     passengers, number of survivors, and percent survival stratified
@@ -154,7 +133,7 @@
     re-create the example output shown in the comments of the script.
     When you are ready to submit your script, save the script and 
     type `submit()`, or type `reset()` to reset the script to its 
-    original state.
+    original state. Don't forget about the Data Manipulation with dplyr and tidyr cheatsheet in the help menu!
   AnswerTests: script_results_data2('titanic_4','titanic_4.rds','titanic_4_a.rds', round_numeric_columns = TRUE)
   Hint: Check the example output in the comments of the script I 
     opened for you. Make sure the columns in your output are in the

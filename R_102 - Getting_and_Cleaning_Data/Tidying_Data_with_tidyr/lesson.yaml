@@ -1,9 +1,9 @@
 - Class: meta
   Course: R 102 - Getting and Cleaning_Data
   Lesson: Tidying Data with tidyr
-  Author: Nick Carchedi
+  Author: Nick Carchedi, adapted by Michael Marks
   Type: Standard
-  Organization: JHU Biostat
+  Organization: JHU Biostat, adapted by Improvement Path Systems
   Version: 2.2.15
 
 - Class: text
